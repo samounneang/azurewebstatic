@@ -1,24 +1,13 @@
 import { Component } from '@angular/core';
-export class Customer {
-  public id: number;
-  public name: string;
-}
+import { RouterOutlet } from '@angular/router';
+
 @Component({
   selector: 'app-root',
-  styleUrls: ['./app.component.scss'],
-  template: `
-    <div>
-      <app-header-bar></app-header-bar>
-      <div class="section columns">
-        <app-nav class="column is-2"></app-nav>
-        <main class="column">
-          <router-outlet></router-outlet>
-        </main>
-      </div>
-    </div>
-  `,
-
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  customers: Customer[] = [{ id: 1, name: 'john' }];
+  title = 'iot-app';
 }
